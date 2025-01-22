@@ -1,0 +1,159 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    padding-top: 30px;
+  }
+  
+  .container {
+    max-width: 1200px;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: #007bff;
+  }
+  
+  .navbar-brand {
+    font-size: 1.8em;
+    font-weight: bold;
+  }
+  
+  .navbar-nav .nav-item .nav-link {
+    color: #fff !important;
+    font-size: 1.1em;
+  }
+  
+  .navbar-nav .nav-item .nav-link:hover {
+    color: #ccc !important;
+  }
+  
+  /* Dashboard */
+  h2 {
+    color: #333;
+    font-size: 2em;
+    font-weight: 600;
+  }
+  
+  h4 {
+    color: #555;
+    font-weight: 500;
+  }
+  
+  /* Expense & Income Forms */
+  .form-group label {
+    font-size: 1.1em;
+  }
+  
+  .form-control {
+    font-size: 1.1em;
+    padding: 0.75em;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5em;
+  }
+  
+  button.btn {
+    padding: 0.7em 2em;
+    font-size: 1.1em;
+    border-radius: 5px;
+  }
+  
+  button.btn-primary {
+    background-color: #007bff;
+  }
+  
+  button.btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  button.btn-success {
+    background-color: #28a745;
+  }
+  
+  button.btn-success:hover {
+    background-color: #218838;
+  }
+  
+  /* Expense List */
+  ul.list-group {
+    margin-top: 20px;
+  }
+  
+  ul.list-group-item {
+    font-size: 1.1em;
+    padding: 1.25em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  ul.list-group-item strong {
+    color: #007bff;
+  }
+  
+  /* Dashboard & Graphs */
+  .dashboard-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 2em;
+  }
+  
+  .dashboard-container > div {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .dashboard-container > div:last-child {
+    margin-right: 0;
+  }
+  
+  .dashboard-container h4 {
+    margin-bottom: 10px;
+  }
+  
+  /* Search and Export Button */
+  .search-container {
+    margin-top: 20px;
+  }
+  
+  .export-button {
+    margin-top: 20px;
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .navbar-nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+  
+    .navbar-nav .nav-item {
+      margin-bottom: 10px;
+    }
+  
+    .dashboard-container {
+      flex-direction: column;
+    }
+  
+    .dashboard-container > div {
+      margin-bottom: 20px;
+    }
+  
+    .form-group label {
+      font-size: 1.0em;
+    }
+  
+    .form-control {
+      font-size: 1em;
+      padding: 0.5em;
+    }
+  
+    button.btn {
+      font-size: 1em;
+      padding: 0.5em 1.5em;
+    }
+  }
+  
