@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { addTransaction } from '../api';
 import "../components/style/addTransaction.css";
 
-const AddTransaction = ({ fetchTransactions, setBudget }) => {
+export default function AddTransaction({ fetchTransactions, setBudget }) {
     const [formData, setFormData] = useState({
         type: 'expense',
         amount: '',
@@ -87,6 +87,4 @@ const AddTransaction = ({ fetchTransactions, setBudget }) => {
         </form>
     );
 };
-
-export default AddTransaction;
 

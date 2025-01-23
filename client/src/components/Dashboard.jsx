@@ -7,7 +7,7 @@ import LineChart from './LineChart';
 import ConfirmationModal from "./ConfirmationModal";
 import SuccessMessage from "./SuccessMessage";
 
-const Dashboard = () => {
+export default function Dashboard() {
     const [transactions, setTransactions] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
@@ -204,6 +204,4 @@ const Dashboard = () => {
         </div>
     );
 };
-
-export default Dashboard;
 

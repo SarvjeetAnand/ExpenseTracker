@@ -1,7 +1,7 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
 
-const SuccessMessage = ({ show, message, onClose }) => {
+export default function SuccessMessage ({ show, message, onClose }) {
   return (
     <Modal show={show} onHide={onClose} centered>
       <Modal.Header closeButton>
@@ -19,4 +19,3 @@ const SuccessMessage = ({ show, message, onClose }) => {
   );
 };
 
-export default SuccessMessage;

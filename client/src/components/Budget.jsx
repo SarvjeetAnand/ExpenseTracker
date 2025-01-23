@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { setBudget } from '../api';
 
-const Budget = ({fetchBudget,totalBudget,currentBudget}) => {
+export default function Budget({fetchBudget,totalBudget,currentBudget}) {
     const [budget, setBudgetState] = useState('');
 
 
@@ -31,4 +31,3 @@ const Budget = ({fetchBudget,totalBudget,currentBudget}) => {
     );
 };
 
-export default Budget;

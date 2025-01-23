@@ -1,12 +1,11 @@
 import { React, useState } from 'react';
-// import { deleteTransaction } from '../api';
 import { FaEdit, FaTrashAlt } from "react-icons/fa"; // Icons for actions
 import "../components/style/transactionList.css";
 import { mdiContentSaveEdit, mdiCancel } from '@mdi/js';
 import Icon from '@mdi/react';
 
 
-const TransactionList = ({
+export default function TransactionList ({
     transactions,
     handleDeleteTransaction,
     handleEditTransaction,
@@ -19,72 +18,7 @@ const TransactionList = ({
     hasMore,
     handleShowLess,
     canShowLess,
-}) => {
-    // const handleDelete = async (id) => {
-    //     await deleteTransaction(id);
-    //     fetchTransactions();
-    //     setBudget();
-    // };
-    // useEffect(() => {
-    //         fetchTransactions(); // Fetch the first page
-    //         setBudget();
-    //     }, []);
-
-
-    //     return (
-    //         <div>
-    //             <table className="table table-striped">
-    //                 <thead>
-    //                     <tr>
-    // <th>Type</th>
-    // <th>Amount</th>
-    // <th>Category</th>
-    // <th>Description</th>
-    // <th>Date</th>
-    // <th>Actions</th>
-    //                     </tr>
-    //                 </thead>
-    //                 <tbody>
-    //                     {transactions.map((transaction) => (
-    //                         <tr key={transaction._id}>
-    //                             <td
-    //                                 className={
-    //                                     transaction.type === "income" ? "text-success" : "text-danger"
-    //                                 }
-    //                             >
-    //                                 {transaction.type.charAt(0).toUpperCase() + transaction.type.slice(1)}
-    //                             </td>
-    //                             <td>₹{transaction.amount}</td>
-    //                             <td>{transaction.category}</td>
-    //                             <td>{transaction.description}</td>
-    //                             <td>{new Date(transaction.date).toLocaleString()}</td>
-    //                             <td>
-    //                                 <button className="btn btn-danger btn-sm" onClick={() => {handleDeleteTransaction(transaction._id); setBudget();}}>Delete</button>
-    //                             </td>
-    //                         </tr>
-    //                     ))}
-    //                 </tbody>
-
-    //             </table>
-
-    //             <div className="text-center mt-3">
-    //                 {hasMore && (
-    //                     <button className="btn btn-primary mx-2" onClick={handleShowMore}>
-    //                         Show More
-    //                     </button>
-    //                 )}
-    //                 {canShowLess && (
-    //                     <button className="btn btn-secondary mx-2" onClick={handleShowLess}>
-    //                         Show Less
-    //                     </button>
-    //                 )}
-    //             </div>
-    //         </div>
-    //     );
-    // };
-
-    // export default TransactionList;
-
+}) {
 
     // State for filter options
     const [filters, setFilters] = useState({
@@ -228,11 +162,11 @@ const TransactionList = ({
                                         <td>
                                             <input
                                                 type="date"
-                                                value={new Date(editedTransaction.date).toISOString().substr(0,10) || ""}
+                                                value={new Date(editedTransaction.date).toISOString().substr(0, 10) || ""}
                                                 onChange={(e) =>
                                                     handleEditChange("date", e.target.value)
                                                 }
-                                            
+
                                                 className="form-control"
                                             />
                                         </td>
@@ -317,4 +251,3 @@ const TransactionList = ({
     );
 };
 
-export default TransactionList;

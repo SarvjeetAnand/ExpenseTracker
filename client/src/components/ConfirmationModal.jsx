@@ -1,7 +1,7 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
 
-const ConfirmationModal = ({ show, title, message, onConfirm, onCancel, confirmLabel, confirmVariant }) => {
+export default function ConfirmationModal({ show, title, message, onConfirm, onCancel, confirmLabel, confirmVariant }){
   return (
     <Modal show={show} onHide={onCancel} centered>
       <Modal.Header closeButton>
@@ -21,5 +21,3 @@ const ConfirmationModal = ({ show, title, message, onConfirm, onCancel, confirmL
     </Modal>
   );
 };
-
-export default ConfirmationModal;
