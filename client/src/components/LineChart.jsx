@@ -11,7 +11,7 @@ import {
   Legend,
   CategoryScale,
 } from "chart.js";
-import "./style/graph.css";
+import "../style/graph.css";
 
 ChartJS.register(LineElement, PointElement, LinearScale, Title, Tooltip, Legend, CategoryScale);
 

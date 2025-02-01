@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
 import { FaEdit, FaTrashAlt } from "react-icons/fa"; // Icons for actions
-import "../components/style/transactionList.css";
+import "../style/transactionList.css"; // CSS file for styling
 import { mdiContentSaveEdit, mdiCancel } from '@mdi/js';
 import Icon from '@mdi/react';
 
@@ -132,7 +132,7 @@ export default function TransactionList ({
                                         <td>
                                             <input
                                                 type="number"
-                                                value={editedTransaction.amount.toFixed(2) || ""}
+                                                value={editedTransaction.amount|| ""}
                                                 onChange={(e) =>
                                                     handleEditChange("amount", e.target.value)
                                                 }
@@ -171,9 +171,6 @@ export default function TransactionList ({
                                             />
                                         </td>
 
-
-
-
                                         <td>
                                             <button
                                                 onClick={() => handleSaveTransaction(transaction._id)}
@@ -211,7 +208,7 @@ export default function TransactionList ({
                                         <td>
                                             <button
                                                 onClick={() => handleEditTransaction(transaction)}
-                                                className="btn btn-sm me-2"
+                                                className="btn btn-sm"
                                                 disabled={editTransactionId !== null} // Disable editing other rows
                                             >
                                                 <FaEdit className='fs-5' style={{ color: "blue" }} />

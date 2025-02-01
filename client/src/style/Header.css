@@ -1,0 +1,17 @@
+.header-section {
+    background-image: url('../asset/BWB.png'); /* Path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px; /* Adjust height as needed */
+    display: flex;
+    align-items: end;
+    justify-content: center;
+  }
+  
+  .header-content {
+    /* background: rgba(0, 0, 0, 0.5); Add a translucent overlay for text contrast */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  

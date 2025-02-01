@@ -15,8 +15,8 @@ export default function Budget({fetchBudget,totalBudget,currentBudget}) {
     return (
         <div className="mb-4">
             <h4>Set Monthly Budget</h4>
-            <p>Total Budget: ₹{totalBudget || 'Not Set'}</p>
-            <p>Remaining Budget: ₹{currentBudget || 'Not Set'}</p>
+            <p>Total Set Budget: ₹{totalBudget || 'Not Set'}</p>
+            <p>Current Budget: ₹{currentBudget || 'Not Set'}</p>
             <form onSubmit={handleSubmit}>
                 <input
                     type="number"

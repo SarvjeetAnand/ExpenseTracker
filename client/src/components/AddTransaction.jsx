@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { addTransaction } from '../api';
-import "../components/style/addTransaction.css";
+import "../style/addTransaction.css";
 
 export default function AddTransaction({ fetchTransactions, setBudget }) {
     const [formData, setFormData] = useState({
