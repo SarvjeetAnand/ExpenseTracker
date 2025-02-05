@@ -81,7 +81,7 @@ export default function AddTransaction({ fetchTransactions, setBudget }) {
                     />
                 </div>
                 <div className="col-md-2 mobile">
-                    <button type="submit" className="btn btn-primary w-100">Add</button>
+                    <button type="submit" className="btn btn-primary bs">Add</button>
                 </div>
             </div>
         </form>

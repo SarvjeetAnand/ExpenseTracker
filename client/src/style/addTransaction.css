@@ -2,10 +2,24 @@
     .mobile {
      margin-bottom: 10px;
     }
+    .form-control {
+      width: 45%;
+    }
+    .bs {
+      width: 50%;
+      text-align: center;
+    }
   }
   
   @media (max-width: 480px) {
     .mobile {
       margin-bottom: 10px;;
+    }
+    .form-control {
+      width: 45%;
+    }
+    .bs {
+      width: 50%;
+      text-align: center;
     }
   }

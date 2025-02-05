@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
-import { getGraphData } from "../api"; // Add a new API call for graph data
+import { getGraphData, downloadCSV } from "../api"; // Add a new API call for graph data
+import { FaFileDownload } from "react-icons/fa";
 import {
   Chart as ChartJS,
   LineElement,
@@ -15,7 +16,7 @@ import "../style/graph.css";
 
 ChartJS.register(LineElement, PointElement, LinearScale, Title, Tooltip, Legend, CategoryScale);
 
-export default function LineGraph ({ transactions }) {
+export default function LineGraph({ transactions }) {
   const [chartData, setChartData] = useState(null);
 
   const fetchGraphData = async () => {
@@ -77,7 +78,13 @@ export default function LineGraph ({ transactions }) {
   };
 
   return (
-    <div className="chart-container">
+    <div className="chart-container position-relative">
+      <button
+        className="btn position-absolute top-0 end-0 m-10"
+        onClick={downloadCSV}
+      >
+        <FaFileDownload className='fs-3' style={{ color: "green" }}/>
+      </button>
       {chartData ? <Line data={chartData} options={options} /> : <p>Loading chart...</p>}
     </div>
   );

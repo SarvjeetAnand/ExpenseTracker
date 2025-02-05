@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const connectDB = require('./config/db');
 const transactionRoutes = require('./routes/transactionRoutes');
 const budgetRoutes = require('./routes/budgetRoutes');
+const csvRoutes = require("./routes/csvRoutes"); // Import CSV routes
 
 
 
@@ -20,6 +21,8 @@ app.use(bodyParser.json());
 app.use('/api/transactions', transactionRoutes);
 // Budget Routes
 app.use('/api/budget', budgetRoutes);
+// CSV Routes
+app.use("/api/csv", csvRoutes);
 
 // Start server
 const PORT = process.env.PORT || 5000;
