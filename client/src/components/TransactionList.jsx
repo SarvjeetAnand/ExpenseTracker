@@ -50,7 +50,7 @@ export default function TransactionList ({
         <div className="transaction-list">
             <div className="filters row mb-3">
                 {/* Category Filter */}
-                <div className="col-md-4">
+                <div className="col-md-4 col-6 text-center">
                     <label htmlFor="category" className="form-label">
                         Filter by Category
                     </label>
@@ -66,7 +66,7 @@ export default function TransactionList ({
                 </div>
 
                 {/* Type Filter */}
-                <div className="col-md-4">
+                <div className="col-md-4 col-6 text-center">
                     <label htmlFor="type" className="form-label">
                         Filter by Type
                     </label>
@@ -84,7 +84,7 @@ export default function TransactionList ({
                 </div>
 
                 {/* Date Filter */}
-                <div className="col-md-4">
+                <div className="col-md-4 col-12 text-center">
                     <label htmlFor="date" className="form-label">
                         Filter by Date
                     </label>
@@ -92,7 +92,7 @@ export default function TransactionList ({
                         type="date"
                         name="date"
                         id="date"
-                        className="form-control"
+                        className="form-control ws-md"
                         value={filters.date}
                         onChange={handleFilterChange}
                     />
@@ -100,7 +100,7 @@ export default function TransactionList ({
             </div>
 
             <div className="table-responsive text-center">
-                <table className="table table-bordered table-striped">
+                <table className="table table-bordered table-striped bg-dark text-light">
                     <thead>
                         <tr>
                             <th>Type</th>

@@ -97,4 +97,8 @@
     height: auto;
     margin: 0 auto;
   }
-  
+  @media (max-width: 768px) {
+    .ws-md {
+      width: 50%!important;
+    }
+  }

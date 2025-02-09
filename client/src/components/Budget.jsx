@@ -19,7 +19,7 @@ export default function Budget({fetchBudget,totalBudget,currentBudget}) {
             <p>Current Budget: ₹{currentBudget || 'Not Set'}</p>
             <form onSubmit={handleSubmit}>
                 <div className='row justify-content-center'>
-                    <div className="col-md-3">
+                    <div className="col-md-3 col-6">
                     <input
                     type="number"
                     placeholder="Enter budget"

@@ -1,25 +1,14 @@
 @media (max-width: 768px) {
-    .mobile {
-     margin-bottom: 10px;
-    }
-    .form-control {
-      width: 45%;
-    }
-    .bs {
-      width: 50%;
-      text-align: center;
+    .ws-md {
+      width: 50%!important;
     }
   }
   
   @media (max-width: 480px) {
-    .mobile {
-      margin-bottom: 10px;;
-    }
-    .form-control {
-      width: 45%;
-    }
-    .bs {
-      width: 50%;
-      text-align: center;
+   .ws-sm {
+      width: 25%!important;
     }
   }
+.ws-100 {
+    width: 100%;
+}
