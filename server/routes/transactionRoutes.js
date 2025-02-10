@@ -36,8 +36,9 @@ router.get("/", async (req, res) => {
       const skip = (page - 1) * limit;
   
       // Fetch transactions with pagination
-      const transactions = await Transaction.find().skip(skip).limit(limit);
+      const transactions = await Transaction.find().sort({ date: -1 }).skip(skip).limit(limit);
       const totalCount = await Transaction.countDocuments();
+
   
       res.json({
         totalCount,
@@ -63,7 +64,7 @@ router.post('/', async (req, res) => {
 });
 
 
-// GET: Line graph data
+// Line graph data
 router.get("/graph-data", async (req, res) => {
     try {
       // Fetch all transactions and group by month and year
@@ -106,7 +107,7 @@ router.get("/graph-data", async (req, res) => {
 
 
 
-// PUT: Update a transaction
+// Update a transaction
 router.put("/:id", async (req, res) => {
     const { id } = req.params;
     const { date, description, category, type, amount } = req.body;

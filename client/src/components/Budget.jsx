@@ -22,6 +22,7 @@ export default function Budget({fetchBudget,totalBudget,currentBudget}) {
                     <div className="col-md-3 col-6">
                     <input
                     type="number"
+                    required
                     placeholder="Enter budget"
                     value={budget}
                     onChange={(e) => setBudgetState(e.target.value)}
