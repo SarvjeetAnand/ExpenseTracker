@@ -23,18 +23,25 @@ export default function Dashboard() {
     const [actionType, setActionType] = useState(""); // 'delete' or 'save'
 
     // Fetch transactions from the backend
-    const fetchTransactions = async (page) => {
+    const fetchTransactions = async (page = 1, isAppending = false) => {
         try {
             const response = await getTransactions({ page, limit: 10 }); // Fetch 10 items per page
             const fetchedTransactions = response.data.transactions;
 
-            setTransactions((prev) => {
-                const updatedTransactions = [...prev, ...fetchedTransactions];
-                return updatedTransactions.filter(
-                    (transaction, index, self) =>
-                        index === self.findIndex((t) => t._id === transaction._id) // Avoid duplicates
-                );
-            });
+
+            if (isAppending) {
+                // Append only if we're loading more
+                setTransactions((prev) => {
+                    const updatedTransactions = [...prev, ...fetchedTransactions];
+                    return updatedTransactions.filter(
+                        (transaction, index, self) =>
+                            index === self.findIndex((t) => t._id === transaction._id)
+                    );
+                });
+            } else {
+                // Fresh fetch replaces all data
+                setTransactions(fetchedTransactions);
+            }
 
             setTotalPages(response.data.totalPages);
             setIsLoading(false);
@@ -55,9 +62,10 @@ export default function Dashboard() {
 
     // Initialize transactions and budget on component mount
     useEffect(() => {
-        fetchTransactions(1);
+        fetchTransactions(1, false); // Replace data on mount
         fetchBudget();
     }, []);
+
 
     // Update displayed transactions when `transactions` or `currentPage` changes
     useEffect(() => {
@@ -70,9 +78,10 @@ export default function Dashboard() {
         if (currentPage < totalPages) {
             const nextPage = currentPage + 1;
             setCurrentPage(nextPage);
-            fetchTransactions(nextPage);
+            fetchTransactions(nextPage, true); // Append more
         }
     };
+
 
     // Handle "Show Less"
     const handleShowLess = () => {

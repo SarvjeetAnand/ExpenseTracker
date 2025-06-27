@@ -82,8 +82,9 @@ export default function LineGraph({ transactions }) {
       <button
         className="btn position-absolute top-0 end-0 m-10"
         onClick={downloadCSV}
+        title="Download CSV"
       >
-        <FaFileDownload className='fs-3' style={{ color: "green" }}/>
+        <FaFileDownload className='fs-3' style={{ color: "green" }} />
       </button>
       {chartData ? <Line data={chartData} options={options} /> : <p>Loading chart...</p>}
     </div>
