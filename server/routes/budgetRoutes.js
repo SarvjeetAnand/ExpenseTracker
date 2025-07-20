@@ -6,11 +6,18 @@ const router = express.Router();
 router.get('/', async (req, res) => {
     try {
         const budget = await Budget.findOne();
-        res.json(budget);
+
+        if (!budget) {
+            res.json(budget || {});
+        }
+        else{
+            res.json(budget);
+        }
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 });
+
 
 
 // Set or update the total budget

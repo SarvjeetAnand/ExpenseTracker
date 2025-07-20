@@ -1,4 +1,3 @@
-import React from "react";
 import { Modal, Button } from "react-bootstrap";
 
 export default function ConfirmationModal({ show, title, message, onConfirm, onCancel, confirmLabel, confirmVariant }){
