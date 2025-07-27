@@ -3,7 +3,7 @@ import ConfirmationModal from '../ConfirmationModal';
 import SuccessMessage from '../SuccessMessage';
 import ErrorModal from './ErrorModal';
 
-const CategorySelector = ({ formData, setFormData }) => {
+const CategorySelectorForEditTransaction = ({ formData, setFormData }) => {
   const [showCustomInput, setShowCustomInput] = useState(false);
   const [customCategory, setCustomCategory] = useState('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -134,14 +134,12 @@ const CategorySelector = ({ formData, setFormData }) => {
   return (
     <>
       <div>
-        <label className="block text-sm font-semibold text-gray-700 mb-3">Category</label>
-
         {/* Custom Dropdown */}
         <div className="relative" ref={dropdownRef}>
           <button
             type="button"
             onClick={handleDropdownToggle}
-            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-left flex justify-between items-center"
+            className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-left flex justify-between items-center"
           >
             <span className={formData.category ? 'text-gray-900' : 'text-gray-500'}>
               {getDisplayValue()}
@@ -264,4 +262,4 @@ const CategorySelector = ({ formData, setFormData }) => {
   );
 }
 
-export default CategorySelector;
+export default CategorySelectorForEditTransaction;

@@ -1,88 +1,3 @@
-// import React, { useEffect, useState } from "react";
-// import { Line } from "react-chartjs-2";
-// import { getGraphData } from "../api";
-// import {
-//   Chart as ChartJS,
-//   LineElement,
-//   PointElement,
-//   LinearScale,
-//   Title,
-//   Tooltip,
-//   Legend,
-//   CategoryScale,
-// } from "chart.js";
-// import "../style/graph.css";
-
-// ChartJS.register(LineElement, PointElement, LinearScale, Title, Tooltip, Legend, CategoryScale);
-
-// export default function LineGraph({ transactions }) {
-//   const [chartData, setChartData] = useState(null);
-
-//   const fetchGraphData = async () => {
-//     try {
-//       const response = await getGraphData(); // Fetch data from the API endpoint
-//       const data = response.data;
-//       const labels = data.map((item) => item.monthYear);
-//       const incomeData = data.map((item) => item.income);
-//       const expenseData = data.map((item) => item.expense);
-
-//       setChartData({
-//         labels,
-//         datasets: [
-//           {
-//             label: "Expenses",
-//             data: expenseData,
-//             borderColor: "#ff0000",
-//             backgroundColor: "rgba(255, 0, 0, 0.3)",
-//             tension: 0.4,
-//             pointRadius: 5,
-//             pointBackgroundColor: "#ff0000",
-//           },
-//           {
-//             label: "Income",
-//             data: incomeData,
-//             borderColor: "#28a745",
-//             backgroundColor: "rgba(40, 167, 69, 0.3)",
-//             tension: 0.4,
-//             pointRadius: 5,
-//             pointBackgroundColor: "#28a745",
-//           },
-//         ],
-//       });
-//     } catch (error) {
-//       console.error("Error fetching graph data:", error);
-//     }
-//   };
-
-//   // Fetch graph data on component mount or when transactions update
-//   useEffect(() => {
-//     fetchGraphData();
-//   }, [transactions]);
-
-//   const options = {
-//     responsive: true,
-//     maintainAspectRatio: false,
-//     plugins: {
-//       legend: { position: "top" },
-//       tooltip: {
-//         callbacks: {
-//           label: (context) => `${context.dataset.label}: ₹${context.raw}`,
-//         },
-//       },
-//     },
-//     scales: {
-//       x: { title: { display: true, text: "Months" } },
-//       y: { title: { display: true, text: "Amount (₹)" }, beginAtZero: true },
-//     },
-//   };
-
-//   return (
-//     <div className="chart-container position-relative">
-//       {chartData ? <Line data={chartData} options={options} /> : <p>Loading chart...</p>}
-//     </div>
-//   );
-// };
-
 import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import { getGraphData } from "../api";
@@ -176,7 +91,7 @@ export default function LineGraph({ transactions }) {
       {/* Chart Content */}
       <div className="relative h-[calc(100%-3rem)] sm:h-[calc(100%-4rem)] md:h-[calc(100%-5rem)]">
         {(() => {
-          if (!chartData) {
+          if (chartData === null || chartData.labels.length === 0) {
             return (
               <div className="text-center py-4 sm:py-6 md:py-8 lg:py-12 flex flex-col justify-center h-full">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3 md:mb-4">
